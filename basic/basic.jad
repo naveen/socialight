@@ -1,0 +1,10 @@
+MIDlet-1: Socialight,/icon.png,com.socialight.Socialight
+MIDlet-Jar-URL: basic.jar
+Socialight-App-Id: APP_ID
+MicroEdition-Configuration: CLDC-1.1
+MIDlet-Version: 1.0.0
+Socialight-Auth-Token: AUTH_TOKEN
+MIDlet-Name: Socialight
+MIDlet-Vendor: Socialight
+MicroEdition-Profile: MIDP-2.0
+Socialight-App-Server: APP_SERVER

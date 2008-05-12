@@ -1,0 +1,69 @@
+README - Naveen Selvadurai (naveen@socialight.com) - May 12, 2008
+
+"socialight" is an open-source, location-aware mobile client built on
+top of the Socialight API.
+
+To run the code successfully, you'll need to be a registered developer
+of Socialight and will need access to some keys:
+
+- Server. Identified as APP_SERVER in the JAD file. This should be
+  set to 'socialight.com'.
+
+- Auth Token. Identified as AUTH_TOKEN in the JAD file. This is unique for
+  each user of the application. You can get the AUTH_TOKEN by
+  authenticating a user using /api/profile.
+
+- Application ID. Identified as APP_ID in the JAD file. This is unique
+  for each application. You can register an application ID on Socialight's
+  Developer page: http://socialight.com/api. You'll need to be a
+  registered user of Socialight before you get access to this page.
+
+Some additional notes about this release:
+
+- It's been tested on and meant to run well on Nokia N-Series handsets.
+  It works best with the Nokia N95 (both in terms of UI layout and with
+  key mappings) as this was the handset used to do most of the testing.
+
+- This does not use a custom font and instead relies on the default
+  handset font. The application tries to take font size into account when
+  drawing elements but sometimes this auto-layout may not be optimal,
+  especially on handsets with large default fonts.
+
+- This hasn't been documented elsewhere, but should you need to, it is
+  possible to override some basic navigation keys using identifiers in
+  the JAD file.
+
+  For instance, the Motorola RAZR requires a different set of mappings
+  for the softkeys and the OK button. To specify this remap in the JAD
+  file, specify these properties:
+
+    Setting-Keycode-Ok: -20
+	Setting-Keycode-Left-Softkey: -21
+    Setting-Keycode-Right-Softkey: -22
+
+- The application uses a token-based auto-login method to authenticate
+  the user with the server. The good thing about this design is that the
+  user never has to be prompted to enter login details on the handset
+  (we've always thought that password entry on a mobile phone is rather
+  clumsy). Authentication details should be passed using the properties
+  file:
+
+    Socialight-Auth-Token: AUTH_TOKEN
+
+  This is the main reason the application and the deployment URL cannot
+  be shared with anyone else.
+
+- The application uses a Java source tree that's meant to work with
+  Eclipse (along with EclipseME). Optionally, you can use ProGuard?
+  (http://proguard.sourceforge.net/) to obfuscate your code. The setup
+  of this environment is beyond the scope of this document.
+
+A usage guide for the application can be found at
+  http://socialight.com/help/java
+
+For more details on the API, please consult the documentation at
+  http://socialight.com/help/api
+
+A mailing list for developers is at
+  http://groups.google.com/group/socialight-developers
+
